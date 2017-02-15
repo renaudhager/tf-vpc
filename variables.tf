@@ -5,6 +5,7 @@ variable "access_key" {}
 variable "secret_key" {}
 variable "owner"      { default = "r.hager" }
 variable "tld"        { default = "ue2.aws" }
+variable "vdc"        { default = "ue2" }
 variable "region"     { default = "us-east-2" }
 
 
@@ -25,3 +26,9 @@ variable "azs" {
 #
 variable "vpc_cidr"    { default = "172.16.8.0/24" }
 variable "subnet_bits" { default = "3" }
+
+#
+# Remote state
+#
+variable "dns_rs_bucket" {}
+variable "dns_rs_key" {}

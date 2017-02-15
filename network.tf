@@ -6,9 +6,8 @@
 # DHCP set options
 #
 resource "aws_vpc_dhcp_options" "default" {
-  domain_name         = "${var.tld}"
-  domain_name_servers = ["172.16.8.2"]
-
+  domain_name         = "${var.tld} node.${var.vdc}.consul node.consul"
+  domain_name_servers = ["${data.terraform_remote_state.dns_rs.dns_ip}"]
   tags {
     Name  = "${var.owner}_default"
     owner = "${var.owner}"
@@ -136,7 +135,7 @@ resource "aws_vpc_endpoint" "s3" {
 #
 # Outputs
 #
-
+# TODO: refacto : remove the join pass directly the list.
 output "private_subnet" {
   value = "${join( ",", aws_subnet.private.*.id )}"
 }
