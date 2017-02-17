@@ -156,3 +156,7 @@ output "vpc_cidr_block" {
 output "azs" {
   value = "${lookup( var.azs, var.region )}"
 }
+
+output "vdc" {
+  value = "${var.vdc}"
+}
