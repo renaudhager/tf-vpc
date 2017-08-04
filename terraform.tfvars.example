@@ -5,3 +5,7 @@
 # AWS Credentials
 access_key = "{YOUR_AWS_ACCESS_KEY}"
 secret_key = "{YOUR_AWS_SECRET_KEY}"
+
+# Storage information about DNS remote state file
+dns_rs_bucket = "{BUCKET NAME}"
+dns_rs_key    = "{BUCKET KEY}"
